@@ -1,14 +1,12 @@
-import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
-import Icon from "@/components/ui/icon";
-import { useState, useEffect } from "react";
+import { useState, useEffect } from 'react';
+import Icon from '@/components/ui/icon';
 
 const Index = () => {
   const [timeLeft, setTimeLeft] = useState({
     days: 7,
-    hours: 12,
-    minutes: 30,
-    seconds: 45
+    hours: 14,
+    minutes: 32,
+    seconds: 15
   });
 
   useEffect(() => {
@@ -30,286 +28,309 @@ const Index = () => {
     return () => clearInterval(timer);
   }, []);
 
+  const testimonials = [
+    {
+      name: "Алина",
+      text: "Раньше я неделями собиралась с духом, чтобы снять один рилс. Сейчас снимаю каждый день и кайфую.",
+      result: "первый вирусный рилс на 3 день"
+    },
+    {
+      name: "Катя",
+      text: "Я думала, что рилс — это не моё. Оказалось, что просто никто не объяснял нормально.",
+      result: "охваты выросли в 5 раз"
+    },
+    {
+      name: "Света",
+      text: "Марафон прошёл на одном дыхании. Впервые я поняла, что снимать может быть легко и весело.",
+      result: "+200 подписчиков за месяц"
+    }
+  ];
+
   return (
-    <div className="min-h-screen bg-background text-foreground font-rubik">
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 z-0">
-          <img 
-            src="https://cdn.poehali.dev/projects/dd45b8b8-117d-4936-a307-f8ac4223ff95/files/14dba046-dacf-4d5a-97f1-3b9a7216db85.jpg"
-            alt="Reels Killer Hero"
-            className="w-full h-full object-cover opacity-40"
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/60 to-background"></div>
-        </div>
-
-        <div className="container relative z-10 text-center px-4 py-20 animate-fade-in">
-          <div className="inline-block mb-6 px-4 py-2 bg-primary/20 border border-primary rounded-full">
-            <span className="text-primary font-bold tracking-wider">💥 МАРАФОН</span>
-          </div>
-          
-          <h1 className="text-6xl md:text-8xl font-oswald font-bold mb-6 leading-tight">
-            <span className="text-primary">REELS</span>{" "}
-            <span className="text-secondary">KILLER</span>
-          </h1>
-          
-          <p className="text-2xl md:text-3xl font-oswald text-muted-foreground mb-8 max-w-3xl mx-auto">
-            30 дней рилс: найди свой стиль, кайфуй и снимай легко
-          </p>
-          
-          <Button 
-            size="lg" 
-            className="bg-secondary hover:bg-secondary/90 text-black font-bold text-xl px-12 py-7 rounded-full shadow-lg shadow-secondary/50 hover:shadow-secondary/70 transition-all hover:scale-105"
-          >
-            Принять участие 🎯
-          </Button>
-        </div>
-
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-          <Icon name="ChevronDown" size={40} className="text-primary" />
-        </div>
-      </section>
-
-      <section className="py-20 px-4 bg-card/50">
-        <div className="container max-w-4xl mx-auto animate-slide-up">
-          <div className="flex items-start gap-6 mb-8">
-            <div className="text-6xl">😤</div>
-            <div>
-              <h2 className="text-4xl md:text-5xl font-oswald font-bold mb-6 text-primary">
-                Знаешь, что самое обидное?
-              </h2>
-              <p className="text-xl leading-relaxed text-muted-foreground">
-                Большинство блогеров так и не доходят до того самого рилс. Того, который зайдёт. 
-                Который просто возьмёт и выстрелит.
+    <div className="min-h-screen bg-black text-white overflow-x-hidden">
+      <div 
+        className="relative min-h-screen flex items-center justify-center bg-cover bg-center"
+        style={{
+          backgroundImage: 'url(https://cdn.poehali.dev/projects/dd45b8b8-117d-4936-a307-f8ac4223ff95/files/5902377c-8ebd-4495-a0cf-facd920e975e.jpg)',
+          backgroundBlendMode: 'overlay'
+        }}
+      >
+        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black"></div>
+        
+        <div className="relative z-10 container mx-auto px-4 py-20">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div className="space-y-8 animate-slide-up">
+              <div className="inline-block px-4 py-2 bg-accent/20 border-2 border-accent rounded-lg">
+                <span className="text-accent font-bold text-sm tracking-wider">МАРАФОН ДЛЯ БЛОГЕРОВ</span>
+              </div>
+              
+              <h1 className="text-6xl md:text-7xl lg:text-8xl font-oswald font-bold leading-none">
+                <span className="text-white">REELS</span>
+                <br />
+                <span className="text-primary">KILLER</span>
+              </h1>
+              
+              <p className="text-2xl md:text-3xl text-secondary font-rubik font-medium">
+                30 дней рилс: найди свой стиль,<br />
+                кайфуй и снимай легко
               </p>
-              <p className="text-xl leading-relaxed mt-4 text-muted-foreground">
-                Потому что они до него просто не дойдут. Сольются раньше. Устанут ломать голову, 
-                что снимать. Испугаются камеры. Решат, что «это не моё».
+              
+              <div className="flex flex-wrap gap-4 text-lg">
+                <div className="flex items-center gap-2">
+                  <Icon name="Check" className="text-primary" size={24} />
+                  <span>Без страха камеры</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Icon name="Check" className="text-primary" size={24} />
+                  <span>Свой стиль за 30 дней</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Icon name="Check" className="text-primary" size={24} />
+                  <span>Реальные охваты</span>
+                </div>
+              </div>
+              
+              <button className="group relative px-12 py-5 bg-secondary text-black font-oswald font-bold text-xl rounded-lg hover:bg-secondary/90 transition-all transform hover:scale-105 shadow-lg shadow-secondary/50">
+                ПРИНЯТЬ УЧАСТИЕ
+                <Icon name="ArrowRight" className="inline-block ml-2 group-hover:translate-x-1 transition-transform" size={24} />
+              </button>
+            </div>
+            
+            <div className="relative animate-scale-in">
+              <div className="absolute inset-0 bg-gradient-to-tr from-primary/30 to-accent/30 blur-3xl"></div>
+              <img 
+                src="https://cdn.poehali.dev/projects/dd45b8b8-117d-4936-a307-f8ac4223ff95/files/41014dac-79e6-4068-bcb5-66c9c6d29f2b.jpg"
+                alt="Reels Killer"
+                className="relative rounded-2xl shadow-2xl border-4 border-primary/50"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <section className="py-20 bg-gradient-to-b from-black to-card">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto space-y-8">
+            <h2 className="text-4xl md:text-5xl font-oswald font-bold text-center mb-12">
+              Ты знаешь, что самое <span className="text-accent">обидное</span>?
+            </h2>
+            
+            <div className="space-y-6 text-xl text-muted-foreground leading-relaxed">
+              <p>
+                Большинство блогеров так и не доходят до того самого рилс. Того, который зайдёт.
+              </p>
+              
+              <p>
+                Они месяцами откладывают, переснимают по 20 раз, удаляют и боятся.
+                Боятся камеры. Боятся, что будет не идеально. Боятся осуждения.
+              </p>
+              
+              <p className="text-white font-medium">
+                А потом смотрят на чужие вирусные рилс и думают: «Ну конечно, у неё получается, а у меня нет».
+              </p>
+              
+              <p>
+                Но правда в том, что <span className="text-primary font-bold">те, кто снимает — побеждают</span>.
+                Не идеально. Не с первого раза. Но они побеждают.
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="py-20 px-4 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-background to-secondary/10"></div>
-        <div className="container max-w-4xl mx-auto relative z-10 animate-scale-in">
-          <div className="flex items-start gap-6 mb-8">
-            <div className="text-6xl">🎯</div>
-            <div>
-              <h2 className="text-4xl md:text-5xl font-oswald font-bold mb-6 text-secondary">
-                В этом марафоне ты перестанешь париться
-              </h2>
-              <p className="text-xl leading-relaxed text-foreground">
-                Каждый день — простое, но точное задание. Без «надо», без «должна». 
-                Просто делай и видь результат.
+      <section className="py-20 bg-card relative overflow-hidden">
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-20 left-10 w-64 h-64 bg-primary rounded-full blur-3xl"></div>
+          <div className="absolute bottom-20 right-10 w-80 h-80 bg-secondary rounded-full blur-3xl"></div>
+        </div>
+        
+        <div className="container mx-auto px-4 relative z-10">
+          <h2 className="text-4xl md:text-5xl font-oswald font-bold text-center mb-16">
+            Что будет на <span className="text-secondary">марафоне</span>
+          </h2>
+          
+          <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-8">
+            <div className="bg-background/50 backdrop-blur border-2 border-primary/30 rounded-xl p-8 hover:border-primary transition-colors">
+              <div className="w-16 h-16 bg-primary/20 rounded-lg flex items-center justify-center mb-6">
+                <Icon name="Target" className="text-primary" size={32} />
+              </div>
+              <h3 className="text-2xl font-oswald font-bold mb-4">Каждый день — задание</h3>
+              <p className="text-muted-foreground text-lg">
+                Без воды и теории. Простое, конкретное действие, которое можно сделать за 15-30 минут. 
+                Снял — отправил — получил фидбэк.
               </p>
-              <div className="grid md:grid-cols-3 gap-4 mt-8">
-                <Card className="p-6 bg-card/50 border-primary/30 hover:border-primary transition-all">
-                  <Icon name="Video" size={32} className="text-primary mb-3" />
-                  <h3 className="font-oswald font-bold text-lg mb-2">Без теории</h3>
-                  <p className="text-sm text-muted-foreground">Только практика и действие</p>
-                </Card>
-                <Card className="p-6 bg-card/50 border-secondary/30 hover:border-secondary transition-all">
-                  <Icon name="Zap" size={32} className="text-secondary mb-3" />
-                  <h3 className="font-oswald font-bold text-lg mb-2">Свой стиль</h3>
-                  <p className="text-sm text-muted-foreground">Найдёшь то, что работает</p>
-                </Card>
-                <Card className="p-6 bg-card/50 border-accent/30 hover:border-accent transition-all">
-                  <Icon name="TrendingUp" size={32} className="text-accent mb-3" />
-                  <h3 className="font-oswald font-bold text-lg mb-2">Охваты</h3>
-                  <p className="text-sm text-muted-foreground">Первые настоящие просмотры</p>
-                </Card>
+            </div>
+            
+            <div className="bg-background/50 backdrop-blur border-2 border-secondary/30 rounded-xl p-8 hover:border-secondary transition-colors">
+              <div className="w-16 h-16 bg-secondary/20 rounded-lg flex items-center justify-center mb-6">
+                <Icon name="Users" className="text-secondary" size={32} />
+              </div>
+              <h3 className="text-2xl font-oswald font-bold mb-4">Поддержка и разборы</h3>
+              <p className="text-muted-foreground text-lg">
+                Ты не одна. В чате — такие же блогеры, которые идут к своему первому вирусному рилс.
+                Я разбираю работы, подсказываю и поддерживаю.
+              </p>
+            </div>
+            
+            <div className="bg-background/50 backdrop-blur border-2 border-accent/30 rounded-xl p-8 hover:border-accent transition-colors">
+              <div className="w-16 h-16 bg-accent/20 rounded-lg flex items-center justify-center mb-6">
+                <Icon name="Lightbulb" className="text-accent" size={32} />
+              </div>
+              <h3 className="text-2xl font-oswald font-bold mb-4">Найди свой стиль</h3>
+              <p className="text-muted-foreground text-lg">
+                Перестань копировать других. За 30 дней ты поймёшь, какой контент тебе заходит, 
+                и начнёшь снимать в своём уникальном стиле.
+              </p>
+            </div>
+            
+            <div className="bg-background/50 backdrop-blur border-2 border-primary/30 rounded-xl p-8 hover:border-primary transition-colors">
+              <div className="w-16 h-16 bg-primary/20 rounded-lg flex items-center justify-center mb-6">
+                <Icon name="TrendingUp" className="text-primary" size={32} />
+              </div>
+              <h3 className="text-2xl font-oswald font-bold mb-4">Первые охваты</h3>
+              <p className="text-muted-foreground text-lg">
+                Через 30 дней ты выйдешь с пачкой готовых рилс, пониманием алгоритмов 
+                и первыми настоящими охватами.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20 bg-gradient-to-b from-card to-black">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto text-center space-y-8">
+            <h2 className="text-4xl md:text-5xl font-oswald font-bold">
+              Через 30 дней ты дойдёшь до<br />
+              <span className="text-primary">того самого рилс</span>
+            </h2>
+            
+            <p className="text-2xl text-muted-foreground leading-relaxed">
+              Который выстрелит. Потому что он — живой, настоящий и твой.
+            </p>
+            
+            <div className="grid md:grid-cols-3 gap-6 pt-8">
+              <div className="bg-card border-2 border-primary/30 rounded-xl p-6">
+                <div className="text-5xl font-oswald font-bold text-primary mb-2">30</div>
+                <div className="text-lg text-muted-foreground">дней практики</div>
+              </div>
+              
+              <div className="bg-card border-2 border-secondary/30 rounded-xl p-6">
+                <div className="text-5xl font-oswald font-bold text-secondary mb-2">0</div>
+                <div className="text-lg text-muted-foreground">страха камеры</div>
+              </div>
+              
+              <div className="bg-card border-2 border-accent/30 rounded-xl p-6">
+                <div className="text-5xl font-oswald font-bold text-accent mb-2">∞</div>
+                <div className="text-lg text-muted-foreground">идей для контента</div>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="py-20 px-4 bg-card/50">
-        <div className="container max-w-4xl mx-auto animate-fade-in">
-          <div className="flex items-start gap-6 mb-8">
-            <div className="text-6xl">🔥</div>
-            <div>
-              <h2 className="text-4xl md:text-5xl font-oswald font-bold mb-6 text-primary">
-                Что будет через 30 дней?
-              </h2>
-              <p className="text-xl leading-relaxed text-muted-foreground">
-                Ты дойдёшь до того самого рилс, который выстрелит. Потому что он — живой, 
-                настоящий и твой.
-              </p>
-              <div className="mt-8 space-y-4">
-                {[
-                  "Перестанешь бояться камеры — снимать станет легко",
-                  "Найдёшь свой стиль — тот, в котором комфортно и круто",
-                  "Получишь первые охваты — не случайные, а настоящие",
-                  "Поймёшь, что снимать регулярно — это кайф, а не пытка"
-                ].map((item, index) => (
-                  <div key={index} className="flex items-start gap-4">
-                    <Icon name="CheckCircle2" size={24} className="text-primary mt-1 flex-shrink-0" />
-                    <p className="text-lg text-foreground">{item}</p>
+      <section className="py-20 bg-black">
+        <div className="container mx-auto px-4">
+          <h2 className="text-4xl md:text-5xl font-oswald font-bold text-center mb-16">
+            Что говорят <span className="text-secondary">участницы</span>
+          </h2>
+          
+          <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-8">
+            {testimonials.map((testimonial, index) => (
+              <div key={index} className="bg-card border-2 border-muted rounded-xl p-8 hover:border-primary transition-colors">
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="w-12 h-12 bg-gradient-to-br from-primary to-secondary rounded-full flex items-center justify-center font-oswald font-bold text-xl">
+                    {testimonial.name[0]}
                   </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="py-20 px-4 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-secondary/10 via-background to-accent/10"></div>
-        <div className="container max-w-4xl mx-auto relative z-10 animate-scale-in">
-          <div className="flex items-start gap-6 mb-8">
-            <div className="text-6xl">📱</div>
-            <div className="w-full">
-              <h2 className="text-4xl md:text-5xl font-oswald font-bold mb-6 text-secondary">
-                Как это работает?
-              </h2>
-              <Card className="p-8 bg-card border-secondary/30">
-                <p className="text-xl leading-relaxed text-foreground mb-6">
-                  Каждый день в Telegram — новое задание, примеры и разборы. 
-                  Без воды, без «надо». Только действие и кайф.
+                  <div className="font-rubik font-bold text-xl">{testimonial.name}</div>
+                </div>
+                
+                <p className="text-muted-foreground mb-6 leading-relaxed">
+                  "{testimonial.text}"
                 </p>
-                <div className="grid md:grid-cols-2 gap-6">
-                  <div className="flex items-start gap-3">
-                    <Icon name="Send" size={24} className="text-secondary flex-shrink-0 mt-1" />
-                    <div>
-                      <h4 className="font-bold mb-1">Telegram-чат</h4>
-                      <p className="text-sm text-muted-foreground">Ежедневные задания и поддержка</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-3">
-                    <Icon name="Users" size={24} className="text-secondary flex-shrink-0 mt-1" />
-                    <div>
-                      <h4 className="font-bold mb-1">Комьюнити</h4>
-                      <p className="text-sm text-muted-foreground">Такие же крутые, как ты</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-3">
-                    <Icon name="Target" size={24} className="text-secondary flex-shrink-0 mt-1" />
-                    <div>
-                      <h4 className="font-bold mb-1">Разборы</h4>
-                      <p className="text-sm text-muted-foreground">Что работает, а что нет</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-3">
-                    <Icon name="Sparkles" size={24} className="text-secondary flex-shrink-0 mt-1" />
-                    <div>
-                      <h4 className="font-bold mb-1">Примеры</h4>
-                      <p className="text-sm text-muted-foreground">Живые кейсы каждый день</p>
-                    </div>
-                  </div>
+                
+                <div className="pt-4 border-t border-primary/20">
+                  <div className="text-sm text-primary font-medium">{testimonial.result}</div>
                 </div>
-              </Card>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="py-20 px-4 bg-card/50">
-        <div className="container max-w-4xl mx-auto text-center animate-slide-up">
-          <h2 className="text-4xl md:text-5xl font-oswald font-bold mb-4 text-primary">
-            ⏰ До старта марафона
-          </h2>
-          <div className="flex justify-center gap-4 md:gap-8 mb-12">
-            {[
-              { value: timeLeft.days, label: 'дней' },
-              { value: timeLeft.hours, label: 'часов' },
-              { value: timeLeft.minutes, label: 'минут' },
-              { value: timeLeft.seconds, label: 'секунд' }
-            ].map((item, index) => (
-              <div key={index} className="flex flex-col items-center">
-                <div className="bg-primary text-black font-oswald font-bold text-4xl md:text-6xl w-20 h-20 md:w-28 md:h-28 flex items-center justify-center rounded-lg mb-2">
-                  {String(item.value).padStart(2, '0')}
-                </div>
-                <span className="text-sm md:text-base text-muted-foreground">{item.label}</span>
               </div>
             ))}
           </div>
-          
-          <Button 
-            size="lg" 
-            className="bg-accent hover:bg-accent/90 text-white font-bold text-2xl px-16 py-8 rounded-full shadow-lg shadow-accent/50 hover:shadow-accent/70 transition-all hover:scale-105 mb-4"
-          >
-            Принять участие в Reels Killer
-          </Button>
-          <p className="text-muted-foreground">
-            Контент-допинг для тех, кто хочет снимать по кайфу
-          </p>
         </div>
       </section>
 
-      <section className="py-20 px-4 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-background to-secondary/5"></div>
-        <div className="container max-w-4xl mx-auto relative z-10 animate-fade-in">
-          <h2 className="text-4xl md:text-5xl font-oswald font-bold mb-12 text-center text-secondary">
-            💬 Что говорят участники
-          </h2>
-          <div className="grid md:grid-cols-2 gap-6">
-            {[
-              {
-                text: "Впервые за год я снимаю рилс каждый день и мне это нравится. Это какая-то магия!",
-                author: "Анна",
-                tag: "@anna_blog"
-              },
-              {
-                text: "Перестала париться над идеями. Просто беру телефон и снимаю. И работает!",
-                author: "Марина",
-                tag: "@marina_expert"
-              },
-              {
-                text: "Охваты выросли в 3 раза за первую неделю. Я в шоке, но в хорошем смысле.",
-                author: "Катя",
-                tag: "@katya_coach"
-              },
-              {
-                text: "Наконец-то нашла свой стиль. Теперь знаю, ЧТО снимать и КАК это делать.",
-                author: "Света",
-                tag: "@sveta_creates"
-              }
-            ].map((testimonial, index) => (
-              <Card key={index} className="p-6 bg-card/50 border-primary/20 hover:border-primary/50 transition-all">
-                <p className="text-lg mb-4 italic">"{testimonial.text}"</p>
-                <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center">
-                    <Icon name="User" size={24} className="text-primary" />
-                  </div>
-                  <div>
-                    <p className="font-bold">{testimonial.author}</p>
-                    <p className="text-sm text-muted-foreground">{testimonial.tag}</p>
-                  </div>
+      <section className="py-20 bg-gradient-to-b from-black to-card relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-tr from-accent/20 to-primary/20 blur-3xl"></div>
+        
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="max-w-4xl mx-auto text-center space-y-12">
+            <h2 className="text-4xl md:text-5xl font-oswald font-bold">
+              Старт через
+            </h2>
+            
+            <div className="grid grid-cols-4 gap-4 max-w-2xl mx-auto">
+              <div className="bg-black border-2 border-secondary rounded-xl p-6">
+                <div className="text-5xl font-oswald font-bold text-secondary mb-2">
+                  {timeLeft.days}
                 </div>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <footer className="py-12 px-4 bg-card border-t border-primary/20">
-        <div className="container max-w-4xl mx-auto">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-6">
-            <div>
-              <h3 className="text-2xl font-oswald font-bold mb-2">
-                <span className="text-primary">REELS</span>{" "}
-                <span className="text-secondary">KILLER</span>
-              </h3>
-              <p className="text-sm text-muted-foreground">
-                Контент-допинг для блогеров
+                <div className="text-sm text-muted-foreground uppercase tracking-wider">дней</div>
+              </div>
+              
+              <div className="bg-black border-2 border-primary rounded-xl p-6">
+                <div className="text-5xl font-oswald font-bold text-primary mb-2">
+                  {timeLeft.hours}
+                </div>
+                <div className="text-sm text-muted-foreground uppercase tracking-wider">часов</div>
+              </div>
+              
+              <div className="bg-black border-2 border-accent rounded-xl p-6">
+                <div className="text-5xl font-oswald font-bold text-accent mb-2">
+                  {timeLeft.minutes}
+                </div>
+                <div className="text-sm text-muted-foreground uppercase tracking-wider">минут</div>
+              </div>
+              
+              <div className="bg-black border-2 border-secondary rounded-xl p-6">
+                <div className="text-5xl font-oswald font-bold text-secondary mb-2">
+                  {timeLeft.seconds}
+                </div>
+                <div className="text-sm text-muted-foreground uppercase tracking-wider">секунд</div>
+              </div>
+            </div>
+            
+            <div className="space-y-6">
+              <button className="group relative px-16 py-6 bg-accent text-white font-oswald font-bold text-2xl rounded-xl hover:bg-accent/90 transition-all transform hover:scale-105 shadow-2xl shadow-accent/50">
+                ПРИНЯТЬ УЧАСТИЕ В МАРАФОНЕ
+                <Icon name="Zap" className="inline-block ml-3 group-hover:rotate-12 transition-transform" size={28} />
+              </button>
+              
+              <p className="text-muted-foreground">
+                Количество мест ограничено
               </p>
             </div>
-            <div className="flex gap-6">
-              <a href="#" className="hover:text-primary transition-colors">
-                <Icon name="Instagram" size={28} />
+          </div>
+        </div>
+      </section>
+
+      <footer className="py-12 bg-black border-t border-muted">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto text-center space-y-6">
+            <h3 className="text-2xl font-oswald font-bold">Остались вопросы?</h3>
+            
+            <div className="flex justify-center gap-6">
+              <a href="#" className="w-12 h-12 bg-card hover:bg-primary/20 border-2 border-muted hover:border-primary rounded-lg flex items-center justify-center transition-colors group">
+                <Icon name="Instagram" className="text-muted-foreground group-hover:text-primary transition-colors" size={24} />
               </a>
-              <a href="#" className="hover:text-secondary transition-colors">
-                <Icon name="Send" size={28} />
+              <a href="#" className="w-12 h-12 bg-card hover:bg-secondary/20 border-2 border-muted hover:border-secondary rounded-lg flex items-center justify-center transition-colors group">
+                <Icon name="Send" className="text-muted-foreground group-hover:text-secondary transition-colors" size={24} />
               </a>
-              <a href="#" className="hover:text-accent transition-colors">
-                <Icon name="Youtube" size={28} />
+              <a href="#" className="w-12 h-12 bg-card hover:bg-accent/20 border-2 border-muted hover:border-accent rounded-lg flex items-center justify-center transition-colors group">
+                <Icon name="Mail" className="text-muted-foreground group-hover:text-accent transition-colors" size={24} />
               </a>
             </div>
-          </div>
-          <div className="mt-8 text-center text-sm text-muted-foreground">
-            <p>Сделано с 💚 для тех, кто снимает по кайфу</p>
+            
+            <p className="text-muted-foreground text-sm">
+              © 2024 Reels Killer. Снимай по кайфу, а не по обязанности.
+            </p>
           </div>
         </div>
       </footer>
