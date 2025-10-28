@@ -39,29 +39,12 @@ const Index = () => {
       >
         <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black"></div>
         
-        <div className="relative z-10 container mx-auto px-4 py-20">
-          <div className="max-w-4xl mx-auto text-center space-y-8 animate-slide-up">
-            <div className="inline-block px-4 py-2 bg-accent/20 border-2 border-accent rounded-lg mb-4">
-              <span className="text-accent font-bold text-sm tracking-wider">МАРАФОН</span>
-            </div>
-            
-            <h1 className="text-6xl md:text-7xl lg:text-8xl font-oswald font-bold leading-none mb-8">
-              <span className="text-primary">REELS</span>
-              <br />
-              <span className="text-white">KILLER</span>
-            </h1>
-            
-            <p className="text-2xl md:text-3xl text-white font-rubik leading-relaxed max-w-3xl mx-auto">
-              30 дней — и твои Reels начнут стрелять,<br />
-              попадая в рекомендации и сердца людей
-            </p>
-            
-            <div className="pt-8">
-              <button className="group relative px-12 py-5 bg-accent text-white font-oswald font-bold text-xl rounded-lg hover:bg-accent/90 transition-all transform hover:scale-105 shadow-lg shadow-accent/50">
-                🔪 СТАТЬ КИЛЛЕРОМ РИЛС
-                <Icon name="ArrowDown" className="inline-block ml-2 group-hover:translate-y-1 transition-transform" size={24} />
-              </button>
-            </div>
+        <div className="relative z-10 container mx-auto px-4 py-20 flex items-end justify-center h-full">
+          <div className="pb-20 animate-slide-up">
+            <button className="group relative px-12 py-5 bg-accent text-white font-oswald font-bold text-xl rounded-lg hover:bg-accent/90 transition-all transform hover:scale-105 shadow-lg shadow-accent/50">
+              🔪 СТАТЬ КИЛЛЕРОМ РИЛС
+              <Icon name="ArrowDown" className="inline-block ml-2 group-hover:translate-y-1 transition-transform" size={24} />
+            </button>
           </div>
         </div>
       </div>
